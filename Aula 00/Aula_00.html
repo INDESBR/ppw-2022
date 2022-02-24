@@ -1,54 +1,40 @@
-<script>
+<script type="text/javascript">
 
-    // Calculadora JS
-
-    selecionar_operacao()
-
-    // Funções
-
-    function selecionar_operacao() {
-
-        let operacao = prompt(`Digite o número da operação que deseja executar: 
-    1 - Soma
+    let operacao = prompt(`Digite o número da operação desejada
+    1 - Adição
     2 - Subtração
     3 - Multiplicação
     4 - Divisão`)
+    
+    let num1 = Number(prompt("Digite um número"))
+    let num2 = Number(prompt("Digite outro número"))
 
-        let numero1 = Number(prompt("Digite um número"))
+    calcular(operacao, num1, num2)
 
-        let numero2 = Number(prompt("Digite outro número"))
+    function calcular(op, n1, n2) {
 
-        switch (operacao) {
+        let valorTotal
+
+        switch (op) {
             case "1":
-                soma(numero1, numero2)
+                valorTotal = n1 + n2
                 break
+
             case "2":
-                subtracao(numero1, numero2)
+                valorTotal = n1 - n2
                 break
+
             case "3":
-                multiplicacao(numero1, numero2)
+                valorTotal = n1 * n2
                 break
+
             case "4":
-                divisao(numero1, numero2)
+                valorTotal = n1 / n2
                 break
         }
-    }
 
-    function soma(n1, n2) {
-        return alert(n1 + n2)
-    }
+        return alert(valorTotal)
 
-    function subtracao(n1, n2) {
-        return alert(n1 - n2)
     }
-
-    function multiplicacao(n1, n2) {
-        return alert(n1 * n2)
-    }
-
-    function divisao(n1, n2) {
-        return alert(n1 / n2)
-    }
-
 
 </script>
