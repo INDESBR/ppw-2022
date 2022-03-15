@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--white);
+}
+
+:root {
+    --green: #2A9D8F;
+    --darkgreen: #264653;
+    --white: #fff;
+}
+
+
+/* PADROES */
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.button {
+    font-size: 3rem;
+    background-color: var(--green);
+    border-radius: 10px;
+    display: inline-block;
+    padding: 20px;
+}
+
+.button:active {
+    background-color: var(--darkgreen);
+}
+
+
+/* PADROES */
+
+
+/* GRID EXTERNO */
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 10fr 1fr;
+    height: 100vh;
+}
+
+header {
+    background-color: var(--green);
+}
+
+main {
+    background-color: var(--darkgreen);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    background-color: var(--green);
+}
+
+
+/* GRID EXTERNO */
+
+
+/* CONTAINER */
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+/* CONTAINER */
+
+
+/* DISPLAY */
+
+.display {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "card1 score card2";
+}
+
+.card {
+    width: 250px;
+    height: 250px;
+    background-color: var(--green);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img {
+    width: 80%;
+}
+
+.score {
+    grid-area: score;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+}
+
+.p1 {
+    grid-area: card1;
+}
+
+.p2 {
+    grid-area: card2;
+}
+
+
+/* DISPLAY */
+
+
+/* YOUR TURN */
+
+.your-turn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: 150px;
+    width: 150px;
+    background-color: var(--green);
+    border-radius: 50%;
+    margin: 0 20px;
+}
+
+.option:active {
+    background-color: var(--darkgreen);
+}
+
+.play {
+    width: 100%;
+    text-align: center;
+    margin: 40px 0;
+}
+
+
+/* YOUR TURN */
+
+
+/* RESET */
+
+#reset {
+    display: none;
+    text-align: center;
+}
+
+.feedback p {
+    font-size: 4rem;
+    margin: 40px 0;
+}
+
+
+/* RESET */
+
+.pedra {
+    background-image: url(./assets/pedra.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.papel {
+    background-image: url(./assets/papel.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.tesoura {
+    background-image: url(./assets/tesoura.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
