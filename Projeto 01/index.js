@@ -1,56 +1,35 @@
-let score1 = document.getElementById('sp1')
-let score2 = document.getElementById('sp2')
-
 let escolhaJogador
 let escolhaCPU
 
 let pts1 = 0
 let pts2 = 0
 
+let score1 = document.getElementById('sp1')
+let score2 = document.getElementById('sp2')
+
 const cardJogador = document.getElementById('cardJogador')
 const cardCPU = document.getElementById('cardCPU')
-
 const yourTurn = document.getElementById('yourTurn')
 const resultado = document.getElementById('resultado')
 const reset = document.getElementById('reset')
 
 
-const play = document.getElementById('play').addEventListener('click', () => {
-    jogada()
-})
+const play = document.getElementById('play').addEventListener('click', jogada)
 
-const playAgain = document.getElementById('play-again').addEventListener('click', () => {
-    reiniciar()
-})
+const playAgain = document.getElementById('play-again').addEventListener('click', reiniciar)
 
-const pedra = document.getElementById('opt1').addEventListener('click', () => {
-    escolhaJogador = 'pedra'
-    mudarImagem(cardJogador, 'pedra')
-})
+const options = document.querySelector('#options').addEventListener('click', escolha)
 
-const papel = document.getElementById('opt2').addEventListener('click', () => {
-    escolhaJogador = 'papel'
-    mudarImagem(cardJogador, 'papel')
-})
-
-const tesoura = document.getElementById('opt3').addEventListener('click', () => {
-    escolhaJogador = 'tesoura'
-    mudarImagem(cardJogador, 'tesoura')
-})
-
+function escolha(event) {
+    escolhaJogador = event.target.classList[0]
+    mudarImagem(cardJogador, event.target.classList[0])
+}
 
 function jogada() {
-
     sortear()
     analisar()
     resetar()
-
 }
-
-
-
-
-
 
 
 function mudarImagem(card, classe) {
@@ -61,9 +40,7 @@ function mudarImagem(card, classe) {
         cardCPU.classList.remove('pedra', 'papel', 'tesoura')
         cardCPU.classList.toggle(classe)
     }
-
 }
-
 
 function analisar() {
     if (escolhaCPU == escolhaJogador) {
@@ -96,15 +73,12 @@ function analisar() {
         score2.textContent = pts2
         resultado.textContent = 'A CPU Venceu u.u'
     }
-
 }
 
 function resetar() {
     yourTurn.style.display = 'none'
     reset.style.display = 'block'
-
 }
-
 
 function sortear() {
     let resultadoSorteio = Math.floor(Math.random() * 3 + 1)
@@ -127,11 +101,10 @@ function jogadaMaquina(valor) {
             mudarImagem(cardCPU, 'tesoura')
             break
     }
-
 }
 
 function reiniciar() {
-    yourTurn.style.display = 'block'
     reset.style.display = 'none'
-    mudarImagem(cardCPU, '')
+    yourTurn.style.display = 'block'
+    mudarImagem(cardCPU)
 }

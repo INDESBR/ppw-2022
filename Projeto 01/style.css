@@ -178,21 +178,18 @@ footer {
 
 .pedra {
     background-image: url(./assets/pedra.png);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 .papel {
     background-image: url(./assets/papel.png);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 .tesoura {
     background-image: url(./assets/tesoura.png);
+}
+
+.adjust-img {
     background-position: center;
-    background-size: contain;
+    background-size: 80%;
     background-repeat: no-repeat;
 }
