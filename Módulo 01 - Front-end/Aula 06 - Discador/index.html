@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        background-color: rgb(255, 255, 255);
+        display: grid;
+        place-items: center;
+      }
+
+      .display {
+        background-color: white;
+        border: 1px solid rgb(169, 169, 169);
+        padding: 20px;
+        margin: 10px 0;
+        border-radius: 10px;
+        overflow-x: hidden;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .button {
+        cursor: pointer;
+        border: none;
+        padding: 20px;
+        margin: 2px;
+        border-radius: 10px;
+      }
+
+      .button:hover {
+        background-color: rgb(220, 220, 220);
+      }
+
+      .call {
+        background-color: green;
+      }
+
+      .cancel {
+        background-color: red;
+      }
+
+      .call:hover {
+        background-color: rgb(0, 88, 0);
+      }
+
+      .cancel:hover {
+        background-color: rgb(192, 0, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="display"></div>
+      <div class="row">
+        <button class="button 7">7</button>
+        <button class="button 8">8</button>
+        <button class="button 9">9</button>
+      </div>
+
+      <div class="row">
+        <button class="button 4">4</button>
+        <button class="button 5">5</button>
+        <button class="button 6">6</button>
+      </div>
+
+      <div class="row">
+        <button class="button 1">1</button>
+        <button class="button 2">2</button>
+        <button class="button 3">3</button>
+      </div>
+
+      <div class="row">
+        <button class="button dell call"></button>
+        <button class="button 0">0</button>
+        <button class="button dell cancel"></button>
+      </div>
+    </div>
+
+    <script>
+      let button = document.querySelectorAll(".button");
+      let dell = document.querySelectorAll(".dell");
+      let display = document.querySelector(".display");
+
+      let arrDisplay = [];
+
+      button.forEach((e) => {
+        e.addEventListener("click", () => {
+          arrDisplay.push(e.innerHTML);
+          display.innerHTML = arrDisplay.join("");
+        });
+      });
+
+      dell.forEach((e) => {
+        e.addEventListener("click", () => {
+          arrDisplay = [];
+          display.innerHTML = arrDisplay;
+        });
+      });
+
+    </script>
+  </body>
+</html>
