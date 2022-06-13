@@ -1,110 +1,123 @@
+// Capturando elementos HTML
+const circulos = document.querySelectorAll('.circulo') // Nodelist
+const img_player01 = document.querySelector('#img_player01')
+const img_player02 = document.querySelector('#img_player02')
+const placar_player01 = document.querySelector('#placar_player01')
+const placar_player02 = document.querySelector('#placar_player02')
+const btn_jogar = document.querySelector('#btn_jogar')
+const btn_recomecar = document.querySelector('#btn_recomecar')
+const telaJogar = document.querySelector('#tela_jogar')
+const telaRecomecar = document.querySelector('#tela_recomecar')
+const resultado = document.querySelector('#resultado')
+
+
+// Variaveis para analise
 let escolhaJogador
 let escolhaCPU
-
-let pts1 = 0
-let pts2 = 0
-
-let score1 = document.getElementById('sp1')
-let score2 = document.getElementById('sp2')
-
-const cardJogador = document.getElementById('cardJogador')
-const cardCPU = document.getElementById('cardCPU')
-const yourTurn = document.getElementById('yourTurn')
-const resultado = document.getElementById('resultado')
-const reset = document.getElementById('reset')
+let pontosJogador = 0
+let pontosCPU = 0
 
 
-const play = document.getElementById('play').addEventListener('click', jogada)
+// Convertendo Nodelist para Array
+const opcoes = [...circulos]
 
-const playAgain = document.getElementById('play-again').addEventListener('click', reiniciar)
 
-const options = document.querySelector('#options').addEventListener('click', escolha)
+// Adicionando eventos
+circulos.forEach((opcao) => {
+    opcao.addEventListener('click', () => {
+        escolhaJogador = opcoes.indexOf(opcao)
 
-function escolha(event) {
-    escolhaJogador = event.target.classList[0]
-    mudarImagem(cardJogador, event.target.classList[0])
+        switch (escolhaJogador) {
+            case 0:
+                img_player01.setAttribute('src', './assets/pedra.png')
+                break
+            case 1:
+                img_player01.setAttribute('src', './assets/papel.png')
+                break
+            case 2:
+                img_player01.setAttribute('src', './assets/tesoura.png')
+                break
+        }
+    })
+})
+
+btn_jogar.addEventListener('click', jogar)
+
+btn_recomecar.addEventListener('click', recomecar)
+
+
+// Função principal
+function jogar() {
+
+    jogadaCPU()
+    analise()
+    mostrarResultado()
+
+    // Definição dos valores do placar
+    placar_player01.textContent = pontosJogador
+    placar_player02.textContent = pontosCPU
+
+
 }
 
-function jogada() {
-    sortear()
-    analisar()
-    resetar()
-}
 
+// Funções declaradas:
 
-function mudarImagem(card, classe) {
-    if (card == cardJogador) {
-        cardJogador.classList.remove('pedra', 'papel', 'tesoura')
-        cardJogador.classList.toggle(classe)
-    } else if (card == cardCPU) {
-        cardCPU.classList.remove('pedra', 'papel', 'tesoura')
-        cardCPU.classList.toggle(classe)
+function jogadaCPU() {
+    escolhaCPU = Math.floor(Math.random() * 3)
+
+    switch (escolhaCPU) {
+        case 0:
+            img_player02.setAttribute('src', './assets/pedra.png')
+            break
+        case 1:
+            img_player02.setAttribute('src', './assets/papel.png')
+            break
+        case 2:
+            img_player02.setAttribute('src', './assets/tesoura.png')
+            break
     }
 }
 
-function analisar() {
+function analise() {
     if (escolhaCPU == escolhaJogador) {
         resultado.textContent = 'Empatou!'
 
-    } else if (escolhaCPU == 'pedra' && escolhaJogador == 'papel') {
-        pts1 += 1
-        score1.textContent = pts1
+    } else if (escolhaCPU == 0 && escolhaJogador == 1) {
+        pontosJogador += 1
         resultado.textContent = 'Você Venceu!'
-    } else if (escolhaCPU == 'pedra' && escolhaJogador == 'tesoura') {
-        pts2 += 1
-        score2.textContent = pts2
+
+    } else if (escolhaCPU == 0 && escolhaJogador == 2) {
+        pontosCPU += 1
         resultado.textContent = 'A CPU Venceu u.u'
 
-    } else if (escolhaCPU == 'papel' && escolhaJogador == 'tesoura') {
-        pts1 += 1
-        score1.textContent = pts1
+    } else if (escolhaCPU == 1 && escolhaJogador == 2) {
+        pontosJogador += 1
         resultado.textContent = 'Você Venceu!'
-    } else if (escolhaCPU == 'papel' && escolhaJogador == 'pedra') {
-        pts2 += 1
-        score2.textContent = pts2
+
+    } else if (escolhaCPU == 1 && escolhaJogador == 0) {
+        pontosCPU += 1
         resultado.textContent = 'A CPU Venceu u.u'
 
-    } else if (escolhaCPU == 'tesoura' && escolhaJogador == 'pedra') {
-        pts1 += 1
-        score1.textContent = pts1
+    } else if (escolhaCPU == 2 && escolhaJogador == 0) {
+        pontosJogador += 1
         resultado.textContent = 'Você Venceu!'
-    } else if (escolhaCPU == 'tesoura' && escolhaJogador == 'papel') {
-        pts2 += 1
-        score2.textContent = pts2
+
+    } else if (escolhaCPU == 2 && escolhaJogador == 1) {
+        pontosCPU += 1
         resultado.textContent = 'A CPU Venceu u.u'
+
     }
 }
 
-function resetar() {
-    yourTurn.style.display = 'none'
-    reset.style.display = 'block'
+function mostrarResultado() {
+    telaRecomecar.style.display = 'block'
+    telaJogar.style.display = 'none'
 }
 
-function sortear() {
-    let resultadoSorteio = Math.floor(Math.random() * 3 + 1)
-    jogadaMaquina(resultadoSorteio)
+function recomecar() {
+    telaRecomecar.style.display = 'none'
+    telaJogar.style.display = 'block'
 }
 
-function jogadaMaquina(valor) {
 
-    switch (valor) {
-        case 1:
-            escolhaCPU = 'pedra'
-            mudarImagem(cardCPU, 'pedra')
-            break
-        case 2:
-            escolhaCPU = 'papel'
-            mudarImagem(cardCPU, 'papel')
-            break
-        case 3:
-            escolhaCPU = 'tesoura'
-            mudarImagem(cardCPU, 'tesoura')
-            break
-    }
-}
-
-function reiniciar() {
-    reset.style.display = 'none'
-    yourTurn.style.display = 'block'
-    mudarImagem(cardCPU)
-}
