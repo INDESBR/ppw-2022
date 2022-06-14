@@ -14,9 +14,9 @@ const resultado = document.querySelector('#resultado')
 // Variaveis para analise
 let escolhaJogador
 let escolhaCPU
+let start = false
 let pontosJogador = 0
 let pontosCPU = 0
-
 
 // Convertendo Nodelist para Array
 const opcoes = [...circulos]
@@ -25,6 +25,10 @@ const opcoes = [...circulos]
 // Adicionando eventos
 opcoes.forEach((opcao) => {
     opcao.addEventListener('click', () => {
+
+        // Adicionar valor a variavel START
+
+        start = true
 
         // Mudar tela de escolha do jogador
 
@@ -43,13 +47,13 @@ opcoes.forEach((opcao) => {
         }
 
         // Ativar efeito borda no circulo selecionado
-        
+
         for (value in opcoes) {
             opcoes[value].classList.remove('circulo_ativo')
         }
 
         opcao.classList.toggle('circulo_ativo')
-       
+
     })
 })
 
@@ -61,13 +65,19 @@ btn_recomecar.addEventListener('click', recomecar)
 // Função principal
 function jogar() {
 
-    jogadaCPU()
-    analise()
-    mostrarResultado()
+    // Verificar se tem algum valor na variável START
+    if (start == true) {
+        jogadaCPU()
+        analise()
+        mostrarResultado()
 
-    // Definição dos valores do placar
-    placar_player01.textContent = pontosJogador
-    placar_player02.textContent = pontosCPU
+        // Definição dos valores do placar
+        placar_player01.textContent = pontosJogador
+        placar_player02.textContent = pontosCPU
+
+    } else {
+        alert('Selecione uma opção para iniciar o jogo!')
+    }
 
 }
 
