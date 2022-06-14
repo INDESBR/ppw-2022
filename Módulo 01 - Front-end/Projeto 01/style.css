@@ -7,8 +7,8 @@
 }
 
 :root {
-    --green: #2A9D8F;
-    --darkgreen: #264653;
+    --green: #588157;
+    --darkgreen: #344e41;
     --white: #fff;
 }
 
@@ -56,13 +56,17 @@ body{
 .circulo {
     width: 150px;
     height: 150px;
-    background-color: #2A9D8F;
+    background-color: var(--green);
     border-radius: 50%;
 
     display: grid;
     place-items: center;
 
     cursor: pointer;
+}
+
+.circulo_ativo {
+    border: solid 5px white;
 }
 
 img {
@@ -76,9 +80,15 @@ img {
     padding: 20px 40px;
     font-size: 2rem;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 span {
     font-size: 60px;
+}
+
+#resultado {
+    text-align: center;
+    margin: 20px;
 }
 

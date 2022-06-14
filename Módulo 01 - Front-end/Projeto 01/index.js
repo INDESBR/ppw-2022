@@ -23,8 +23,11 @@ const opcoes = [...circulos]
 
 
 // Adicionando eventos
-circulos.forEach((opcao) => {
+opcoes.forEach((opcao) => {
     opcao.addEventListener('click', () => {
+
+        //mudarEscolhaJogador()
+
         escolhaJogador = opcoes.indexOf(opcao)
 
         switch (escolhaJogador) {
@@ -38,6 +41,15 @@ circulos.forEach((opcao) => {
                 img_player01.setAttribute('src', './assets/tesoura.png')
                 break
         }
+
+        // ativarCirculos()
+        
+        for (value in opcoes) {
+            opcoes[value].classList.remove('circulo_ativo')
+        }
+
+        opcao.classList.toggle('circulo_ativo')
+       
     })
 })
 
@@ -56,7 +68,6 @@ function jogar() {
     // Definição dos valores do placar
     placar_player01.textContent = pontosJogador
     placar_player02.textContent = pontosCPU
-
 
 }
 
