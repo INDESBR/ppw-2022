@@ -6,8 +6,8 @@ const placar_player01 = document.querySelector('#placar_player01')
 const placar_player02 = document.querySelector('#placar_player02')
 const btn_jogar = document.querySelector('#btn_jogar')
 const btn_recomecar = document.querySelector('#btn_recomecar')
-const telaJogar = document.querySelector('#tela_jogar')
-const telaRecomecar = document.querySelector('#tela_recomecar')
+const tela_jogar = document.querySelector('#tela_jogar')
+const tela_recomecar = document.querySelector('#tela_recomecar')
 const resultado = document.querySelector('#resultado')
 
 
@@ -132,13 +132,13 @@ function analise() {
 }
 
 function mostrarResultado() {
-    telaRecomecar.style.display = 'block'
-    telaJogar.style.display = 'none'
+    tela_recomecar.style.display = 'block'
+    tela_jogar.style.display = 'none'
 }
 
 function recomecar() {
-    telaRecomecar.style.display = 'none'
-    telaJogar.style.display = 'block'
+    tela_recomecar.style.display = 'none'
+    tela_jogar.style.display = 'block'
 }
 
 
