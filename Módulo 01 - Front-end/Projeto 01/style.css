@@ -19,6 +19,15 @@ body{
     height: 100vh;
 }
 
+span {
+    font-size: 60px;
+}
+
+img {
+    width: 80%;
+    height: 80%;
+}
+
 #tela_recomecar {
     display: none;
 }
@@ -69,11 +78,6 @@ body{
     border: solid 5px white;
 }
 
-img {
-    width: 80%;
-    height: 80%;
-}
-
 .btn {
     background-color: var(--green);
     border: none;
@@ -81,10 +85,6 @@ img {
     font-size: 2rem;
     border-radius: 10px;
     cursor: pointer;
-}
-
-span {
-    font-size: 60px;
 }
 
 #resultado {
