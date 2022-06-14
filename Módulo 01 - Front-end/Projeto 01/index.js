@@ -26,7 +26,7 @@ const opcoes = [...circulos]
 opcoes.forEach((opcao) => {
     opcao.addEventListener('click', () => {
 
-        //mudarEscolhaJogador()
+        // Mudar tela de escolha do jogador
 
         escolhaJogador = opcoes.indexOf(opcao)
 
@@ -42,7 +42,7 @@ opcoes.forEach((opcao) => {
                 break
         }
 
-        // ativarCirculos()
+        // Ativar efeito borda no circulo selecionado
         
         for (value in opcoes) {
             opcoes[value].classList.remove('circulo_ativo')
