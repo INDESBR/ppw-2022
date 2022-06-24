@@ -10,7 +10,6 @@ const tela_jogar = document.querySelector('#tela_jogar')
 const tela_recomecar = document.querySelector('#tela_recomecar')
 const resultado = document.querySelector('#resultado')
 
-
 // Variaveis para analise
 let escolhaJogador
 let escolhaCPU
@@ -20,7 +19,6 @@ let pontosCPU = 0
 
 // Convertendo Nodelist para Array
 const opcoes = [...circulos]
-
 
 // Adicionando eventos
 opcoes.forEach((opcao) => {
@@ -84,6 +82,8 @@ function jogar() {
 
 // Funções declaradas:
 
+
+
 function jogadaCPU() {
     escolhaCPU = Math.floor(Math.random() * 3)
 
@@ -99,6 +99,7 @@ function jogadaCPU() {
             break
     }
 }
+
 
 function analise() {
     if (escolhaCPU == escolhaJogador) {
