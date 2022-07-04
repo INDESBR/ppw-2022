@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: rgb(54, 81, 97);
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.container {
+    width: 60vw;
+    height: 80vh;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "disp disp disp disp"
+    "n7 n8 n9 soma"
+    "n4 n5 n6 subt"
+    "n1 n2 n3 mult"
+    "clear n0 equal divi";
+}
+
+button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+button:hover {
+    background-color: lightblue;
+    border: none;
+}
+
+#n1 {
+    grid-area: n1;
+}
+
+#n2 {
+    grid-area: n2;
+}
+
+#n3 {
+    grid-area: n3;
+}
+
+#n4 {
+    grid-area: n4;
+}
+
+#n5 {
+    grid-area: n5;
+}
+
+#n6 {
+    grid-area: n6;
+}
+
+#n7 {
+    grid-area: n7;
+}
+
+#n8 {
+    grid-area: n8;
+}
+
+#n9 {
+    grid-area: n9;
+}
+
+#n0 {
+    grid-area: n0;
+}
+
+#clear {
+    grid-area: clear;
+    background-color: rgb(160, 255, 215);
+}
+
+#clear:hover {
+    grid-area: clear;
+    background-color: rgb(86, 255, 184);
+}
+
+#equal {
+    grid-area: equal;
+    background-color: rgb(255, 160, 160);
+}
+
+#equal:hover {
+    grid-area: equal;
+    background-color: rgb(255, 92, 92);
+}
+
+#soma {
+    grid-area: soma;
+}
+
+#subt {
+    grid-area: subt;
+}
+
+#mult {
+    grid-area: mult;
+}
+
+#divi {
+    grid-area: divi;
+}
+
+#disp {
+    font-size: 3rem;
+    grid-area: disp;
+    overflow-x: hidden;
+    padding: 20px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+
