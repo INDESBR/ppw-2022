@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "prompt": "^1.3.0"
+  },
+  "name": "dia-11---nodejs",
+  "version": "1.0.0",
+  "main": "calc.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
