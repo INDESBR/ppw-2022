@@ -1,0 +1,11 @@
+> Instalação do NodeJS:
+sudo apt install nodejs
+
+> Instalação do NVM (reiniciar o terminal após instalar)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+
+> Iniciando o NodeJS em uma pasta
+npm init
+
+> Instalação do prompt
+npm install prompt
