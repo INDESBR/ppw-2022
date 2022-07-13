@@ -1,26 +1,28 @@
-const prompt = require('prompt');
 const functions = require('./functions.js');
 
-prompt.start();
+let v1 = prompt('Digite o primeiro valor')
+let operador = prompt('Digite um operador')
+let v2 = prompt('Digite o segundo valor')
 
-prompt.get(['primeiroValor', 'operador', 'segundoValor'], function (err, result) {
 
-    let v1 = Number(result.primeiroValor)
-    let v2 = Number(result.segundoValor)
 
-    switch (result.operador) {
-        case '+':
-            functions.somar(v1,v2)
-            break
-        case '-':
-            functions.subtrair(v1,v2)
-            break
-        case '*':
-            functions.multiplicar(v1,v2)
-            break
-        case '/':
-            functions.dividir(v1,v2)
-            break
-    }
+switch (operador) {
+    case '+':
+        functions.somar(Number(v1), Number(v2))
+        break
+    case '-':
+        functions.subtrair(Number(v1), Number(v2))
+        break
+    case '*':
+        functions.multiplicar(Number(v1), Number(v2))
+        break
+    case '/':
+        functions.dividir(Number(v1), Number(v2))
+        break
+}
 
-});
+
+
+
+
+
