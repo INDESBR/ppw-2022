@@ -1,4 +1,4 @@
-fetch('https://api.github.com/users/rafaelr92f')
+fetch('https://api.github.com/users/rafaelr92f') // GET
     .then((resposta) => {
         const data = resposta.json()
             .then((data) => {
@@ -7,7 +7,7 @@ fetch('https://api.github.com/users/rafaelr92f')
                 showName(data.name)
             })
     })
-
+    
 const showData = (result) => {
     for (value in result) {
         if (document.querySelector('#' + value)) {

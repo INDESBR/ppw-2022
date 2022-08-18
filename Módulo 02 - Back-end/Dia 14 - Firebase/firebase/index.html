@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha To-Do List</title>
+   
+    <style>
+        .hide { display: none !important; }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="telaLogin">
+        <input id="inputEmail" type="email">
+        <input id="inputPassword" type="password">
+        <button id="btnLogin">Login</button>
+        <button id="btnCreateNewUser">Cadastrar</button>
+        <button id="btnLogout">Sair</button>
+        <p id="currentUser">Usuário atual</p>
+    </div>
+
+    <hr>
+
+    <div id="telaTarefas" class="hide">
+        <h1>Minhas tarefas</h1>
+        <h2>Quantidade de tarefas <span id="qntLis"></span> </h2>
+        <div>
+            <input type="text" id="inputTarefa">
+            <button id="btnInserirTarefa">Inserir tarefa</button>
+        </div>
+        <ul id="tarefas">
+            
+        </ul>
+    </div>
+
+
+    <script src="./dist/bundle.js"></script>
+</body>
+
+</html>
